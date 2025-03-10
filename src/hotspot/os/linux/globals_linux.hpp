@@ -101,7 +101,15 @@
   product(bool, UseMadvPopulateWrite, true, DIAGNOSTIC,                 \
           "Use MADV_POPULATE_WRITE in os::pd_pretouch_memory.")         \
                                                                         \
-
+  product(bool, FakeNUMA, false, DIAGNOSTIC,                            \
+          "Fake NUMA behavior.")                                        \
+                                                                        \
+  product(intx, FakeNUMANodes, 8, DIAGNOSTIC,                           \
+          "If FakeNUMA, number of fake NUMA nodes the process sees.")   \
+                                                                        \
+  product(bool, FakeNUMAStressMigrations, false, DIAGNOSTIC,            \
+          "If FakeNUMA, we stress migrations of tasks to different nodes.") \
+                                                                        \
 // end of RUNTIME_OS_FLAGS
 
 //

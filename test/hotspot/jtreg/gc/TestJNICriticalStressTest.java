@@ -22,7 +22,7 @@
  */
 
 /*
- * @test G1 Full GC execution when JNICritical is active
+ * @test id=g1
  * @summary Check that Full GC calls are not ignored if concurrent with an active GCLocker.
  * @bug 8057586
  * @requires vm.gc.G1
@@ -30,29 +30,29 @@
  * @library /test/lib
  * @build jdk.test.whitebox.WhiteBox
  * @run driver jdk.test.lib.helpers.ClassFileInstaller jdk.test.whitebox.WhiteBox
- * @run main/othervm -Xbootclasspath/a:. -XX:+UnlockDiagnosticVMOptions -XX:+WhiteBoxAPI -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc TestJNICriticalStressTest 30 4 4 G1
+ * @run main/othervm -Xbootclasspath/a:. -XX:+UnlockDiagnosticVMOptions -XX:+WhiteBoxAPI -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc TestJNICriticalStressTest 60 4 40 G1
  */
 
  /*
- * @test Parallel Full GC execution when JNICritical is active
+ * @test id=parallel
  * @bug 8057586
  * @requires vm.gc.Parallel
  * @modules java.base/jdk.internal.misc
  * @library /test/lib
  * @build jdk.test.whitebox.WhiteBox
  * @run driver jdk.test.lib.helpers.ClassFileInstaller jdk.test.whitebox.WhiteBox
- * @run main/othervm -Xbootclasspath/a:. -XX:+UnlockDiagnosticVMOptions -XX:+WhiteBoxAPI -XX:+UseParallelGC -Xms1g -Xmx1g -Xlog:gc TestJNICriticalStressTest 30 4 4 Parallel
+ * @run main/othervm -Xbootclasspath/a:. -XX:+UnlockDiagnosticVMOptions -XX:+WhiteBoxAPI -XX:+UseParallelGC -Xms1g -Xmx1g -Xlog:gc TestJNICriticalStressTest 60 4 40 Parallel
  */
 
 /*
- * @test Serial Full GC execution when JNICritical is active
+ * @test id=Serial
  * @bug 8057586
  * @requires vm.gc.Serial
  * @modules java.base/jdk.internal.misc
  * @library /test/lib
  * @build jdk.test.whitebox.WhiteBox
  * @run driver jdk.test.lib.helpers.ClassFileInstaller jdk.test.whitebox.WhiteBox
- * @run main/othervm -Xbootclasspath/a:. -XX:+UnlockDiagnosticVMOptions -XX:+WhiteBoxAPI -XX:+UseSerialGC -Xms1g -Xmx1g -Xlog:gc TestJNICriticalStressTest 30 4 4 Serial
+ * @run main/othervm -Xbootclasspath/a:. -XX:+UnlockDiagnosticVMOptions -XX:+WhiteBoxAPI -XX:+UseSerialGC -Xms1g -Xmx1g -Xlog:gc TestJNICriticalStressTest 60 4 40 Serial
  */
 
 import jdk.test.lib.Asserts;
